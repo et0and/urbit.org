@@ -6,7 +6,7 @@ description = "Te Wahi Auaha is a makerspace based at Takapuna Grammar School, T
 default_language = "en"
 
 # The URL the site will be built for
-base_url = "https://tewahi.com"
+base_url = "https://urbit.org"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -38,4 +38,4 @@ build_search_index = true
 docs_number_chapters = true
 
 [extra.author]
-name = "tewahi.com"
+name = "urbit.org"
