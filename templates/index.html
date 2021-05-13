@@ -12,21 +12,19 @@
 
 {% block title %}
   <meta name="og:title" content="{{ config.title }} - Your personal server">
-  <title>{{ config.title }} - Your personal server</title>
+  <title>{{ config.title }} - TGS makerspace</title>
 {% endblock title %}
 {% block description %}
-  <meta name="og:description" content="Urbit is a simple, durable system for running a personal server that you own 100% and forever.">
-  <meta name="description" content="Urbit is a simple, durable system for running a personal server that you own 100% and forever.">
+  <meta name="og:description" content="Te Wahi Auaha is a makerspace based at Takapuna Grammar School, Tāmaki Makaurau.">
+  <meta name="description" content="Te Wahi Auaha is a makerspace based at Takapuna Grammar School, Tāmaki Makaurau.">
 {% endblock description %}
 {% block content %}
 
 <section class="full lh-copy c2-7-md c3-7-lg mt6 mb6">
-  <p class="mt0 mb4"><strong>Urbit</strong> is a clean-slate OS and network for the 21st century.</p>
-  <p><strong>Urbit OS</strong> is a reimagining of the operating system as an ‘overlay OS.’</p>
-  <p class="mb4">It's a compact system for an individual to run their own permanent personal server on any Unix machine with an internet connection.</p>
-  <p class="mb4"><strong>Urbit ID</strong> is a decentralized digital identity system. Your
-  Urbit ID is a username, network address, and crypto wallet.</p>
-  <p><strong>Urbit OS + Urbit ID</strong> are designed to work together as a single system, are completely open source, and 100% owned by the people who use them.</p>
+  <p class="mt0 mb4"><strong>Te Wahi Auaha</strong> is a makerspace based at Takapuna Grammar School, Tāmaki Makaurau.</p>
+  <p>Open to students and staff, the vision of Te Wahi is to utilise new emerging technologies across different subject areas.</p>
+  <p class="mb4">It's an open space with facilities for 3D printing, laser cutting, augmented reality and digital modeling / animation.</p>
+  <p class="mb4">Nau mai, haere mai. Welcome to Te Wahi.</p>
 </section>
 
 <section class="full lh-copy c7-12-md c7-11-lg mt6 mb6">
@@ -39,16 +37,20 @@
 <section class="full lh-copy c2-7-md c3-7-lg mb6">
   <ul class="list mt0">
     <li class="mt0">
-      <a class="bb" href="/understanding-urbit">Introduction</a><br />
-      Never heard of Urbit before? Start here to read a bit about the project.
+      <a class="bb" href="/understanding-urbit">ZBrush docs</a><br />
+      A way of creating 3D sculptures from scratch.
     </li>
     <li class="mt3">
-      <a class="b--blue2 blue2 bb" href="/using/install/">Install + Setup</a><br />
-      If you're comfortable in the command-line, feel free to boot a node and try Urbit.
+      <a class="b--blue2 blue2 bb" href="/using/install/">Meshmixer docs</a><br />
+      A way of combining 3D models and creating something new.
     </li>
     <li class="mt3">
-      <a class="b--green2 green2 bb" href="/docs/">Documentation</a><br />
-      To learn more about the technology, head to the docs.
+      <a class="b--green2 green2 bb" href="/docs/">Thingiverse</a><br />
+      A way to download existing 3D models online.
+    </li>
+    <li class="mt3">
+      <a class="b--green2 green2 bb" href="/docs/">Fusion 360</a><br />
+      A way to create accurate 3D models for printing and fabrication.
     </li>
   </ul>
 </section>
@@ -56,7 +58,7 @@
 
 <section class="full lh-copy c7-12-md c7-11-lg" id="follow">
   <p class="lh-copy mt1 mb3">
-      We send regular updates about our project. Enter your email to get them.
+      We send regular updates and notices about Te Wahi. Enter your email to get them.
     </p>
     <iframe name="nothing" style="display:none;"></iframe>
     <form
@@ -88,67 +90,8 @@
       </div>
     </form>
   <p class="lh-copy">
-      Follow us on <a class="b--black bb" href="https://twitter.com/urbit">Twitter</a>
+      Follow us on <a class="b--black bb" href="https://instagram.com/tewahi">Instagram</a>
   </p>
-  <p class="lh-copy">
-    Explore the code on <a class="b--black bb" href="https://github.com/urbit/urbit">GitHub</a>
-  </p>
-  <p class="lh-copy">
-    Ask questions in our <a class="b--black bb" href="https://discord.gg/Mae2bk7">Discord</a>
-  </p>
-  <p class="lh-copy">
-    Boot Urbit and join:<br /> <code>~bitbet-bolbel/urbit-community</code>
-  </p>
-</section>
-
-<section class="full c2-7-md c3-7-lg mt5">
-  <h1 class="mb3">Understanding Urbit</h1>
-    <p class="lh-copy mt1">This sequence of posts will give you a high-level overview of Urbit. They take about 20 minutes to read.</p>
-  <ul class="list">
-    <li class="mt3">
-      <a class="b--black bb" href="/understanding-urbit/">Introduction</a>
-    </li>
-    {% set posts = get_section(path="understanding-urbit/_index.md") %} {%
-    for page in posts.pages %}
-    <li class="mt3">
-      <a
-        class="b--black bb"
-        href="{{ page.permalink }}">
-        {{ page.title }}
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
-</section>
-
-<section class="full c7-12-md c7-11-lg mv5">
-  <h1 class="mb3">Latest Posts</h1>
-  <p class="lh-copy mt1">We regularly write posts on our <a class="bb" href="/blog">blog</a> about what we're working on.</p>
-  {% set s = get_section(path="updates/_index.md") %}
-  {% set e = get_section(path="blog/_index.md") %}
-  {% set allposts = s.pages
-            | concat (with=e.pages)
-            | sort(attribute="date")
-            | reverse
-            %}
-  {% for page in allposts | slice (end=2) %}
-    <a class="bb-0" href="{{ page.permalink }}">
-      <li class="mb4 list">
-        <h2 class="f5 fw6 mt0 mb1">{{ page.title }}</h2>
-        {% if page.extra.image %}
-        <img class="db mv2 obj-cover h4 w-50 ba" src="{{ page.extra.image }}" />
-        {% elif page.extra.description %}
-        <p class="lh-copy mt1">{{ page.extra.description }}</p>
-        {% endif %}
-        <time class="mono f6">{{ page.date | date(format="~%Y.%-m.%-d") }}</time>
-        <span class="mono f6">
-          {% if page.extra.ship %}
-            <address class="mono f6 mh2">{{ page.extra.ship }}</address>
-          {% endif %}
-        </span>
-      </li>
-    </a>
-  {% endfor %}
 </section>
 
 {% include "partials/footer.html" %}
