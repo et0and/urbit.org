@@ -1,12 +1,12 @@
 # Used in RSS by default
-title = "Urbit"
-description = "Urbit is a personal server built from scratch."
+title = "Te Wahi"
+description = "Te Wahi Auaha is a makerspace based at Takapuna Grammar School, Tāmaki Makaurau"
 
 # The default language, used in RSS
 default_language = "en"
 
 # The URL the site will be built for
-base_url = "https://urbit.org"
+base_url = "https://tewahi.com"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -38,4 +38,4 @@ build_search_index = true
 docs_number_chapters = true
 
 [extra.author]
-name = "urbit.org"
+name = "tewahi.com"
